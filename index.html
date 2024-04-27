@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Budget Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header class="header">
+        <h1>My Budget Tracker</h1>
+    </header>
+    <main class="container">
+        <section class="income">
+            <h2>Income</h2>
+            <form id="income-form">
+                <label for="income-amount">Amount:</label>
+                <input type="number" id="income-amount" name="incomeAmount" placeholder="Enter income amount">
+                <label for="income-source">Source:</label>
+                <input type="text" id="income-source" name="incomeSource" placeholder="Enter income source (e.g., Salary, Bonus)">
+                <button type="button" id="add-income">Add Income</button>
+            </form>
+            <ul id="income-list"></ul>
+        </section>
+        <section class="expenses">
+            <h2>Expenses</h2>
+            <form id="expense-form">
+                <label for="expense-amount">Amount:</label>
+                <input type="number" id="expense-amount" name="expenseAmount" placeholder="Enter expense amount">
+                <label for="expense-category">Category:</label>
+                <select id="expense-category" name="expenseCategory">
+                    <option value="rent">Rent</option>
+                    <option value="groceries">Groceries</option>
+                    <option value="utilities">Utilities</option>
+                    <option value="transportation">Transportation</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="other">Other</option>
+                </select>
+                <label for="expense-description">Description (optional):</label>
+                <input type="text" id="expense-description" name="expenseDescription" placeholder="Enter expense description (e.g., Rent for April)">
+                <button type="button" id="add-expense">Add Expense</button>
+            </form>
+            <ul id="expense-list"></ul>
+        </section>
+        <section class="summary">
+            <h2>Summary</h2>
+            <p id="total-income">Total Income: $<span id="income-value">0</span></p>
+            <p id="total-expense">Total Expense: $<span id="expense-value">0</span></p>
+            <p id="balance">Balance: $<span id="balance-value">0</span></p>
+        </section>
+    </main>
+</body>
+</html>
+
+<style>
+/* Style.css */
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.header {
+  background-color: #3498db;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+section {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 10px;
+  width: calc(33% - 40px);
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+form label {
+  margin-bottom: 5px;
+}
+
+form input,
+form select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin
